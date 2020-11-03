@@ -158,10 +158,10 @@ public class SourceDirectoryManager implements Project {
             if (Files.isSymbolicLink(sourceRoot)) {
                 throw new BLangCompilerException("'" + sourceRoot + "' project directory is symlink.");
             }
-        
-            if (!Files.isWritable(sourceRoot)) {
-                throw new BLangCompilerException("'" + sourceRoot + "' is not writable.");
-            }
+            // TODO (miyurud): Commented this temporarily
+            // if (!Files.isWritable(sourceRoot)) {
+            //     throw new BLangCompilerException("'" + sourceRoot + "' is not writable.");
+            // }
         
             sourceRoot = sourceRoot.normalize().toAbsolutePath();
         
